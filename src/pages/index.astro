@@ -1,7 +1,22 @@
 ---
 import BaseLayout from "../layout/BaseLayout.astro";
+import "../styles/global.css";
 ---
 
 <BaseLayout>
-  <h1>Personal Blog</h1>
+  <h1 class="font-bold text-4xl text-center my-8">Personal Blog</h1>
+  <div
+    class="md:mx-40 mx-5 bg-amber-400 rounded-2xl flex md:flex-row flex-col justify-around items-center h-120"
+  >
+    <a
+      href="/blog"
+      class="w-40 h-40 text-4xl bg-red-400 flex justify-center-safe items-center"
+      >My Blog</a
+    >
+    <a
+      href="/gallery"
+      class="w-40 h-40 text-4xl text-center bg-red-400 flex items-center"
+      >My Gallery</a
+    >
+  </div>
 </BaseLayout>
