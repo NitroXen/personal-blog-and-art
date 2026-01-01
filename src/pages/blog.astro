@@ -1,12 +1,7 @@
 ---
 import BaseLayout from "../layout/BaseLayout.astro";
 import BlogList from "../components/BlogList";
-
-async function getPosts() {
-  const allPosts = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await allPosts.json();
-  return posts;
-}
+import getPosts from "../services/getPosts";
 
 const myPosts = async () => await getPosts();
 ---

@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layout/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost";
+import getPosts from "../../services/getPosts";
+
+const { id } = Astro.params;
+
+export function getStaticPaths() {
+  return getPosts().then((posts) =>
+    posts.map((post) => ({
+      params: { id: post.id.toString() },
+    }))
+  );
+}
+---
+
+<BaseLayout>
+  <BlogPost id={id} />
+</BaseLayout>
